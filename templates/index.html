@@ -3,10 +3,38 @@
 {% block content %}
 <div class="wrapper">
     <div class="staffList">
-
+        <p>What would you like to buy?</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Fruit Name</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Strawberry</td>
+                    <td> 
+                        <select>
+                            <option>0</option>
+                            <option>1</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="formContent">
+            <p>Your Information</p>
+        </div>
     </div>
     <div class="contentInfo">
-
+        <h3>Welcome to Dojo Fruit Store!</h3>
+        <p>
+            Your dojo decided to buy fruites for all the students! 
+            Please use this app to tell us what you would like to have! 
+            Once we get your order, we'll change your student account automatically
+        </p>
+        <p>Dojo Fruit Store is proudly built using Flask</p>
     </div>
 </div>
 {% endblock %}
