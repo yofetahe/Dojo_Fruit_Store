@@ -5,19 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dojo Fruit</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
 <body>
-    <div class="header">
-        <p>Dojo Fruit Store</p>
+    <div id="header">
+        <div class="container">
+            <p>Dojo Fruit Store</p>
+        </div>
     </div>
 
-    {% block content %}
-    
-    {% endblock %}
+    <div class="container">
+        {% block content %}
+        
+        {% endblock %}
+    </div>
 
-    <div class="footer">            
-        <p> Dojo Fruit Store </p>
-        <p>Copyright &copy;2001-<script type="text/JavaScript"> var theDate=new Date(); document.write(theDate.getFullYear())</script></p>
+    <div id="footer">
+        <div class="container">            
+            <p> Dojo Fruit Store </p>
+            <p>Copyright &copy;2001-<script type="text/JavaScript"> var theDate=new Date(); document.write(theDate.getFullYear())</script></p>
+        </div>
     </div>
 </body>
 </html>

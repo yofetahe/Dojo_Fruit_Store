@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<h5>Thank you for your order!</h5>
+<p>We order {{total_order}} items for you and charged your student account on ## Date ## </p>
+<p>You've ordered</p>
+
+<table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Fruit Name</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>            
+            <tr>
+                <td>Strawberry</td>
+                <td>{{ straw }}</td>
+            </tr>
+            <tr>
+                <td>Raspberry</td>
+                <td>{{ ras }}</td>
+            </tr>
+            <tr>
+                <td>Apple</td>
+                <td>{{ app }}</td>
+            </tr>
+        </tbody>
+</table>
+
+<p>Your Information</p>
+<p>Name: {{studname}}</p>
+<p>Your Student ID: {{studid}}</p>
+
+{% endblock %}

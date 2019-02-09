@@ -1,34 +1,60 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-<div class="wrapper">
-    <div class="staffList">
-        <p>What would you like to buy?</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Fruit Name</th>
-                    <th>Quantity</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Strawberry</td>
-                    <td> 
-                        <select>
-                            <option>0</option>
-                            <option>1</option>
-                        </select>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="formContent">
-            <p>Your Information</p>
+    <div class="staffList">        
+        
+        <div class="formContent">            
+
+            <form action="/checkout" method="POST">
+                <p>What would you like to buy?</p>
+                {{ form.hidden_tag() }}
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Fruit Name</th>
+                            <th>Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{ form.straw.label }}</td>
+                            <td>{{ form.straw }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ form.ras.label }}</td>
+                            <td>{{ form.ras }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ form.app.label }}</td>
+                            <td>{{ form.app }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Your Information</p>
+                <div>
+                    {{ form.name.label }}
+                        {% if form.name.errors: %}
+                            {% for error in form.name.errors: %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {{ form.name }}
+                </div>
+                <div>
+                    {{ form.yourid.label }}
+                        {% if form.yourid.errors: %}
+                            {% for error in form.yourid.errors: %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {{ form.yourid }}
+                </div>
+                {{ form.submit(class='btn btn-primary') }}
+            </form>
         </div>
     </div>
     <div class="contentInfo">
-        <h3>Welcome to Dojo Fruit Store!</h3>
+        <h4>Welcome to Dojo Fruit Store!</h4>
         <p>
             Your dojo decided to buy fruites for all the students! 
             Please use this app to tell us what you would like to have! 
@@ -36,5 +62,4 @@
         </p>
         <p>Dojo Fruit Store is proudly built using Flask</p>
     </div>
-</div>
 {% endblock %}
